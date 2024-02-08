@@ -1,0 +1,13 @@
+.estudiante--cabecera {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem 0;
+}
+.estudiante--contedorTitulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.estudiante--contedorTitulo h1 {
+  margin: 0;
+}
