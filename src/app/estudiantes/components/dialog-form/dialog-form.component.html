@@ -1,0 +1,57 @@
+<form [formGroup]="myForm" (ngSubmit)="onSave()" method="post">
+  <h2 mat-dialog-title>Nuevo estudiante</h2>
+  <mat-dialog-content class="form--content">
+    <mat-form-field>
+      <mat-label>Nombres</mat-label>
+      <input matInput type="text" formControlName="nombre" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Apellido Paterno</mat-label>
+      <input matInput type="text" formControlName="apellidoPaterno" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Apellido Materno</mat-label>
+      <input matInput type="text" formControlName="apellidoMaterno" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>GRADO</mat-label>
+      <mat-select formControlName="idGrado">
+        <mat-option
+          *ngFor="let grado of grados"
+          value="{{ grado.nid_grado }}"
+          >{{ grado.nivel + " - " + grado.desc_grado }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Fecha de nacimiento</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        formControlName="fechaDeNacimiento"
+        (dateInput)="addEvent('input', $event)"
+        [max]="maxDate"
+      />
+      <mat-hint>DD/MM/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker
+        #picker
+        startView="year"
+        [startAt]="startDate"
+      ></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Edad</mat-label>
+      <input matInput disabled [value]="age"/>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-content class="form--actions">
+    <button mat-raised-button color="warn" (click)="onNoClick()">
+      Cancelar
+    </button>
+    <button mat-raised-button color="primary" cdkFocusInitial>Agregar</button>
+  </mat-dialog-content>
+</form>

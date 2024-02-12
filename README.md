@@ -1,27 +1,28 @@
-# FrontendEstudiantesPagos
+# Frontend estudiantes pagos
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.10.
 
-## Development server
+## Correr servidor
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Correr `npm start` o `ng server` y navegar a la url `http://localhost:4200/`. 
 
-## Code scaffolding
+## Usar el sitio web
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Una vez este levantado el backend el proyecto se podra usar.
+- Para su uso se recomienda ir agregando estudiantes.
 
-## Build
+![Imagen estudiante](/images/inicioEstudiante.png "Imagen de la pestaña de estudiantes")
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Escoger solo los grados `INI 2 años` o `PRI - primero` ya que solo se tiene data de prueba para esos casos.
+- Tambien se podre buscar estudiante por nombre o apellido.
 
-## Running unit tests
+![Imagen de busqueda](/images/buscarEstudiante.png "Imagen de busqueda estudiante")
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Luego tambien se puede borrar estudiantes dando en el boton de delete.
+- Tambien se puede navegar a la pestaña pagos para poder ver el reporte.
 
-## Running end-to-end tests
+![Imagen Reporte](/images/reportes.png "Imagen de la pestaña de reportes")
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
+## Para ayuda
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

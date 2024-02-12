@@ -11,3 +11,10 @@
 .estudiante--contedorTitulo h1 {
   margin: 0;
 }
+.estudiante--cardList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  text-align: center;
+}

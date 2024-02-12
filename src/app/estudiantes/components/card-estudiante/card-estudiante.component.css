@@ -1,0 +1,19 @@
+img {
+  width: 100%;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.card--title {
+  font-weight: bold;
+}
+.card--content h3 {
+  margin: 0;
+}
+.card--content {
+  display: flex;
+  flex-direction: column;
+  row-gap: .5rem;
+}

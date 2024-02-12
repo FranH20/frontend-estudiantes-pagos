@@ -2,19 +2,47 @@
   <header class="estudiante--cabecera">
     <div class="estudiante--contedorTitulo">
       <h1>Estudiantes</h1>
-      <button mat-raised-button color="primary">
+      <button mat-raised-button color="primary" (click)="openDialog()">
         Agregar nuevo estudiante
       </button>
     </div>
-    <mat-divider></mat-divider>
     <mat-form-field>
       <mat-label>Buscar</mat-label>
       <mat-icon matSuffix>search</mat-icon>
-      <input matInput />
+      <input
+        matInput
+        input
+        type="text"
+        matInput
+        [formControl]="searchInput"
+        (input)="searchEstudiante()"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete
+        #auto="matAutocomplete"
+        autoActiveFirstOption=""
+        (optionSelected)="onSelectedOption($event)"
+      >
+        <mat-option *ngFor="let estudiante of estudiantes" [value]="estudiante">
+          {{ estudiante.full_name }}
+        </mat-option>
+        <mat-option
+          *ngIf="
+            estudiantes.length === 0 &&
+            searchInput.value &&
+            searchInput.value.length > 0
+          "
+          value=""
+        >
+          No se encontro nada con el término {{ searchInput.value }}
+        </mat-option>
+      </mat-autocomplete>
     </mat-form-field>
   </header>
-  <div>
-    <article></article>
-    <article></article>
+  <div class="estudiante--cardList">
+    <estudiantes-card-estudiante
+      [estudiante]="estudiante"
+      *ngFor="let estudiante of estudiantes"
+    ></estudiantes-card-estudiante>
   </div>
 </section>
